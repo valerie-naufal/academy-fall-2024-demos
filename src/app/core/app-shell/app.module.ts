@@ -12,7 +12,7 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {HttpClientModule} from '@angular/common/http';
 
 import {RouterModule, Routes} from '@angular/router';
-import {AuthModule} from '../auth/auth.module';
+import {AuthModule} from '../auth/state/auth.module';
 import {StoreModule} from '@ngrx/store';
 import {StoreDevtoolsModule} from '@ngrx/store-devtools';
 import {environment} from '../../../environments/environment';
@@ -20,22 +20,12 @@ import {RouterState, StoreRouterConnectingModule} from '@ngrx/router-store';
 
 import {EffectsModule} from '@ngrx/effects';
 import {MatProgressSpinnerModule } from '@angular/material/progress-spinner';
-import {metaReducers, reducers} from '../reducers';
-import {AuthGuard} from '../auth/auth.guard';
+import {metaReducers, reducers} from '../state/reducers';
+import {AuthGuard} from '../auth/state/auth.guard';
 import {EntityDataModule} from '@ngrx/data';
+import {routes} from "./app.routes";
 
 
-const routes: Routes = [
-    {
-        path: 'courses',
-        loadChildren: () => import('../../courses/courses.module').then(m => m.CoursesModule),
-        canActivate: [AuthGuard]
-    },
-    {
-        path: '**',
-        redirectTo: '/'
-    }
-];
 
 
 @NgModule({

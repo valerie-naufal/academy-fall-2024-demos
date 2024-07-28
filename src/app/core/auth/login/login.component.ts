@@ -3,13 +3,13 @@ import {UntypedFormBuilder, UntypedFormGroup, Validators} from "@angular/forms";
 
 import {Store} from "@ngrx/store";
 
-import {AuthService} from "../auth.service";
+import {AuthService} from "../state/auth.service";
 import {tap} from "rxjs/operators";
 import {noop} from "rxjs";
 import {Router} from "@angular/router";
-import {AppState} from '../../reducers';
-import {login} from '../auth.actions';
-import {AuthActions} from '../action-types';
+import {AppState} from '../../state/reducers';
+import {login} from '../state/auth.actions';
+import {AuthActions} from '../state/action-types';
 
 @Component({
   selector: 'login',

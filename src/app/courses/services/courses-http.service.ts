@@ -44,5 +44,4 @@ export class CoursesHttpService {
         return this.http.put('/api/course/' + courseId, changes);
     }
 
-
 }

@@ -6,7 +6,7 @@ import {
     MetaReducer, on
 } from '@ngrx/store';
 import {User} from '../model/user.model';
-import {AuthActions} from '../action-types';
+import {AuthActions} from '../state/action-types';
 
 
 
