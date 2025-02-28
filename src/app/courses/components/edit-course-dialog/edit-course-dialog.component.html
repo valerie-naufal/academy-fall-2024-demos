@@ -3,13 +3,16 @@
 
 <mat-dialog-content>
 
-  <ng-container *ngIf="form">
+  @if (form) {
 
-    <div class="spinner-container" *ngIf="loading$ | async">
+
+    @if (loading$ | async) {
+<div class="spinner-container">
 
       <mat-spinner></mat-spinner>
 
     </div>
+}
 
     <ng-container [formGroup]="form">
 
@@ -21,7 +24,8 @@
 
       </mat-form-field>
 
-      <ng-container *ngIf="mode == 'create'">
+      @if (mode == 'create') {
+
 
         <mat-form-field>
 
@@ -39,7 +43,8 @@
 
         </mat-form-field>
 
-      </ng-container>
+      
+}
 
       <mat-form-field>
 
@@ -72,7 +77,8 @@
     </ng-container>
 
 
-  </ng-container>
+  
+}
 
 </mat-dialog-content>
 

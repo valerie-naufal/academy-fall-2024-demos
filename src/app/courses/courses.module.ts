@@ -1,5 +1,5 @@
 import {NgModule} from '@angular/core';
-import {CommonModule} from '@angular/common';
+import { CommonModule } from '@angular/common';
 import {HomeComponent} from '../core/home/home.component';
 import {CoursesCardListComponent} from './components/courses-card-list/courses-card-list.component';
 import {EditCourseDialogComponent} from './components/edit-course-dialog/edit-course-dialog.component';
@@ -79,9 +79,7 @@ const entityMetadata: EntityMetadataMap = {
         MatDatepickerModule,
         MatMomentDateModule,
         ReactiveFormsModule,
-        RouterModule.forChild(coursesRoutes)
-    ],
-    declarations: [
+        RouterModule.forChild(coursesRoutes),
         HomeComponent,
         CoursesCardListComponent,
         EditCourseDialogComponent,

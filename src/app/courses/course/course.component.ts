@@ -6,13 +6,19 @@ import {Lesson} from '../model/lesson';
 import {delay, map, tap, withLatestFrom} from 'rxjs/operators';
 import {CourseEntityService} from '../services/course-entity.service';
 import {LessonEntityService} from '../services/lesson-entity.service';
+import { MatButtonModule } from '@angular/material/button';
+import { MatTableModule } from '@angular/material/table';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { AsyncPipe } from '@angular/common';
 
 
 @Component({
-  selector: 'course',
-  templateUrl: './course.component.html',
-  styleUrls: ['./course.component.css'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'course',
+    templateUrl: './course.component.html',
+    styleUrls: ['./course.component.css'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: true,
+    imports: [MatProgressSpinnerModule, MatTableModule, MatButtonModule, AsyncPipe]
 })
 export class CourseComponent implements OnInit {
 
